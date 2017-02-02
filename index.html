@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Aloha Apparel</title>
+
+<!-- ############################################################ 
+                         SCRIPTS                      
+############################################################ -->
+		<script
+  		src="https://code.jquery.com/jquery-3.1.1.min.js"
+  		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  		crossorigin="anonymous"></script>
+
+<!-- ############################################################ 
+                         STYLESHEETS                       
+############################################################ -->
+		<link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:300,400,500,700" rel="stylesheet">
+		<!-- <link rel="stylesheet" type="text/css" href="dist/style.min.css"> -->
+		<link rel="stylesheet" type="text/css" href="dist/styles.css">
+		<script src="https://use.fontawesome.com/56b8e51a02.js"></script>
+	</head>
+	
+	<body>
+
+<!-- ############################################################ 
+                          HEADER                            
+############################################################ -->
+
+
+
+
+		<header class="header width-100 ">
+			<div id="logo" class="logo image-container xs-width-30 sm-width-20 bg-contain-center"></div>
+			<div class="navbar flex-center-center xs-width-100 sm-width-30">
+				<ul class="flex-space-between-center width-100">
+					<li class="font-weight-500"><a href="#about" class="color-red">ABOUT</li>
+					<li class="font-weight-500"><a href="#shop" class="color-red">SHOP</a></li>
+					<li class="font-weight-500"><a href="#featured" class="color-red">FEATURED</a></li>
+					<li class="font-weight-500"><a href="#signup" class="color-red">UPDATES</a></li>
+				</ul>
+			</div>
+			<div class="cart-div flex-end-center xs-width-40 sm-width-20 sans-serif">
+				<div class="price-total"></div>
+				<div id="cart" class="cart clearfix image-container width-50 bg-contain-center flex-center-end">
+					<div class="cart-total flex-center-center sans-serif font-weight-500"></div>
+				</div>
+			</div>		
+		</header>
+
+		<section class="cart-main width-100 flex-col flex-center-center" id="cart-main">
+				<div class="cart-row temp">
+					<div class="product-image"></div>
+					<div class="product-name"></div>
+					<div class="product-price"></div>
+					<div class="product-quantity">
+						<input class="quantity-input" type="number" min="1">
+					</div>
+					<div class="cart-buttons">
+						<button class="updateButton">Update</button>
+						<button class="deleteButton">Delete</button>
+					</div>
+				</div>		
+			<div class="cart-box" id="cart-box">
+
+			</div>
+
+			<div class="total flex-row justify-content-flex-end">
+				
+			</div>
+			<div class="cart-buttons flex-row justify-content-space-between">
+				<button id="clearCartButton" class="clearCartButton">Clear Cart</button>
+				<button id="checkoutButton" class="checkoutButton">Checkout</button>
+			</div>
+
+		</section>
+
+
+
+
+
+		<main class="width-100 clearfix">
+
+		<div class="overlay"></div>
+
+<!-- ############################################################ 
+                          BANNER                            
+############################################################ -->
+
+			<section id="banner" class="banner flex-center-center bg-cover-center width-100">
+				<div class="banner-girl bg-contain-bottom xs-width-100 sm-width-100"></div>
+				<div class="collection-info width-100 color-white flex-col flex-center-center">
+					<h4 class="width-100 text-center sans-serif text-shadow">NEW COLLECTION</h4>
+					<h1 class="text-center text-shadow">Spring/Summer 2016</h1>
+				</div>
+			</section>
+
+<!-- ############################################################ 
+                         ABOUT                             
+############################################################ -->
+
+			<section id="about" class="about width-100 flex-col flex-center-center">
+				<h3 class="width-100 text-center section-title"><span class="italic">Hand-Crafted </span><span class="serif bold">Styles</span></h3>
+				<p class="xs-width-80 sm-width-90 text-center">Aloha Apparel Co. sells only the finest ready-to-travel clothing. Browse our current selection of products or sign-up for updates below.</p>
+			</section>
+
+<!-- ############################################################ 
+                           SHOP                              
+############################################################ -->			
+
+			<section id="shop" class="shop clearfix width-100 flex-col">
+				<div class="flex-row width-100 clearfix">
+					<div class="flex-2 category flex-center-center bg-cover-center text-center laptops">
+						<span class="sans-serif font-weight-500 font-size-2em color-white text-shadow">LAPTOPS</span>
+					</div>
+					<div class="flex-2 flex-row">
+						<div class="flex-1 category flex-center-center bg-cover-center text-center television">
+							<span class="sans-serif font-weight-500 font-size-2em color-white text-shadow">4K TVs</span>
+						</div>
+						<div class="flex-1 category flex-center-center bg-cover-center text-center home-audio">
+							<span class="sans-serif font-weight-500 font-size-2em color-white text-shadow">HOME AUDIO</span>
+						</div>
+					</div>
+				</div>
+				<div class=" clearfix flex-row width-100">
+					<div class="flex-2 flex-row">
+						<div class="flex-1 category flex-center-center bg-cover-center text-center tablets">
+							<span class="sans-serif font-weight-500 font-size-2em color-white text-shadow">TABLETS</span>
+						</div>
+						<div class="flex-1 category flex-center-center bg-cover-center text-center desktops">
+							<span class="sans-serif font-weight-500 font-size-2em color-white text-shadow">DESKTOPS</span>
+						</div>
+					</div>
+					<div class="flex-2 category flex-center-center bg-cover-center text-center cellphones clearfix">
+						<span class="sans-serif font-weight-500 font-size-2em color-white text-shadow">CELLPHONES</span>
+					</div>
+				</div>
+			</section>
+
+<!-- ############################################################
+                          FEATURED                          
+############################################################ -->
+
+			<section id="featured" class="featured flex-col flex-center-center width-100">
+				<h3 class="width-100 text-center section-title"><span class="italic">Most-Loved </span><span class="bold">Products</span></h3>
+				<div class="owl-carousel owl-theme width-100 slider">
+					
+				</div>
+			</section>
+
+<!-- ############################################################ 
+                          SIGNUP                            
+############################################################ -->
+
+			<section id="signup" class="signup clearfix flex-col flex-center-center bg-cover-bottom width-100 color-white">
+				<h3 class="width-100 text-center text-shadow section-title"><span class="italic">Sign-Up for </span><span class="bold">Updates</span></h3>
+				<p class="width-100 text-center font-weight-300 text-shadow">Stay updated on our latest product releases, be first to find out about upcoming sales, and get free style tips from our blog. Unsubscribe at any time.</p>
+				<div class="clearfix email-form xs-width-70 sm-width-50 md-width-30 input-field">
+					<input type="email" placeholder="Your Email" class="float-left input-field-xs input-field-sm xs-width-60 sm-width-60">
+					<input type="submit" placeholder="subscribe" class=" float-right input-field-xs input-field-sm xs-width-30 sm-width-30 submit-btn">
+				</div>
+			</section>
+		</main>
+
+<!-- ############################################################ 
+                         FOOTER                             
+############################################################ -->
+
+		<footer id="footer" class="footer sans-serif color-white clearfix xs-flex-col sm-flex-space-between-center width-100">
+			<div class="social-media xs-flex-center-center sm-justify-content-flex-end xs-width-100 sm-width-50 ">
+				<ul class="xs-space-around-center xs-flex-row sm-flex-col sm-justify-content-space-between">
+					<li><a href="#" class="color-white"><i class="fa fa-facebook icon"></i> <span>Facebook</span></a></li>
+					<li><a href="#" class="color-white"><i class="fa fa-twitter icon"></i> <span>Twitter</span></a></li>
+					<li><a href="#" class="color-white"><i class="fa fa-instagram icon"></i> <span>Instagram</span></a></li>
+					<li><a href="#" class="color-white"><i class="fa fa-pinterest icon"></i> <span>Pinterest</span></a></li>
+					<li><a href="#" class="color-white"><i class="fa fa-google-plus icon"></i> <span>Google+</span></a></li>
+				</ul>
+			</div>
+		</footer>
+
+
+
+<!-- ############################################################ 
+							SCRIPTS                          
+############################################################ -->
+
+		<script src="assets/owlcarousel/owl.carousel.min.js"></script>
+		<script src="build/bundle.js"></script>
+
+	</body>
+</html>

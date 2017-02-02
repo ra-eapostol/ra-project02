@@ -1,0 +1,89 @@
+
+
+  /*****************************************************************/
+ /*                         MOBILE STYLES                         */
+ /*****************************************************************/
+
+
+@media screen and (max-width: 767px) {
+
+  
+
+/*****************************************************
+                     mobile SIGNUP
+******************************************************/
+
+
+
+.signup p {
+	font-size: 0.9rem;
+	padding: 0 20px;
+}
+
+
+
+} /* media query mobile end */
+
+  /****************************************/
+ /*            TABLET STYLES             */
+/****************************************/
+
+@media screen and (min-width: 768px) {
+
+/*signup*/
+
+
+
+.signup p {
+	font-size: 1.2rem;
+	padding: 5%;
+}
+
+
+} /* TABLET END */
+
+
+  /*****************************************/
+ /*            DESKTOP STYLES             */
+/*****************************************/
+
+@media screen and (min-width: 1240px) {
+
+/*SIGNUP*/
+
+.signup {
+	background-size: cover;
+	background-position: bottom;
+}
+
+.signup p {
+	padding: 5%;
+}
+
+
+
+} /* DESKTOP END */
+
+ 
+
+  /**********/
+ /* SIGNUP */
+/**********/ 
+
+.signup {
+	@include background-linear-gradient-green;
+}
+
+.email-form {
+	background-color: $white;
+	margin: 20px auto;
+	padding: 3px;
+}
+
+
+
+.submit-btn {
+	background-color: $burnt-red;
+	color: $white;
+}
+

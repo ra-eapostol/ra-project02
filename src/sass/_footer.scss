@@ -1,0 +1,126 @@
+
+
+  /*****************************************************************/
+ /*                         MOBILE STYLES                         */
+ /*****************************************************************/
+
+
+@media screen and (max-width: 767px) {
+
+  
+/********************************************************
+                       mobile footer 
+*********************************************************/
+
+.footer {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.social-media span {
+	display: none;
+}
+
+
+.social-media {
+	padding: 10% 0;
+	font-size: 1.5rem;
+}
+
+.icon {
+	padding: 10px;
+}
+
+} /* media query mobile end */
+
+  /****************************************/
+ /*            TABLET STYLES             */
+/****************************************/
+
+@media screen and (min-width: 768px) {
+
+
+/* footer */
+
+.footer {
+	padding: 5% 0;
+}
+
+.footer ul {
+	line-height: 2;
+}
+
+.info {
+	padding: 0 20px;
+}
+
+.social-media {
+/*	padding: 40px;*/
+	margin-right: 80px;
+}
+
+
+
+
+} /* TABLET END */
+
+
+
+  /**********/
+ /* FOOTER */
+/**********/
+
+.footer {
+	margin-top: 10px;
+	background: black;
+}
+
+
+.footer address a {
+	text-decoration: underline;
+}
+
+
+
+
+.social-media i {
+	max-width: 5px;
+	margin-right: 20px;
+}
+
+.mail-addr {
+	color: $off-white;
+}
+
+
+.addToCart-btn {
+	background-color: $grey;
+	transition: background-color 0.5s;
+	padding: 5px 10px;
+	&:hover {
+		background-color: $grey;
+	}
+
+}
+
+
+
+
+
+.cart-main {
+	background-color: $off-white;
+/*	padding: 20%;*/
+}
+
+.cart-box {
+	background-color: $off-white;
+	padding: 20px;
+}
+
+
+
+
+#cart-main {
+	display: none;
+}
+

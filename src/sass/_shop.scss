@@ -1,0 +1,90 @@
+
+  /*****************************************************************/
+ /*                         MOBILE STYLES                         */
+ /*****************************************************************/
+
+
+@media screen and (max-width: 767px) {
+
+  
+  /*************************************************************/
+ /*                          mobile SHOP                      */
+/*************************************************************/
+
+.flex-row {
+	flex-wrap: wrap;
+}
+
+.flex-2 {
+	min-width: $full;
+}
+
+.flex-1 {
+	min-width: $half;
+}
+
+.category {
+	height: 300px;
+	border: 3.5px solid white;
+}
+
+} /* media query mobile end */
+
+
+
+  /********/
+ /* SHOP */
+/********/
+
+.category {
+	height: 300px;
+	border: 3.5px solid white;
+}
+
+.flex-1 {
+	flex: 1 1 $quarter;
+
+}
+
+.flex-2 {
+	flex: 2 1 $half;
+	width: $half;
+
+}
+
+
+
+
+
+
+.laptops {
+	background-image: url('../assets/images/laptop-category.jpg');
+
+
+}
+
+.television {
+	background-image: url('../assets/images/tv-category.jpg');
+
+}
+
+.home-audio {
+	background-image: url('../assets/images/home-audio-category.jpg');
+
+}
+
+.tablets {
+	background-image: url('../assets/images/tablet-category.jpg');
+
+}
+
+.desktops {
+	background-image: url('../assets/images/desktop-category.jpg');
+
+}
+
+.cellphones {
+	background-image: url('../assets/images/cell-category.jpg');
+}
+
+

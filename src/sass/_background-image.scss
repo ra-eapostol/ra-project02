@@ -1,0 +1,39 @@
+
+  /***************************/
+ /* BACKGROUND IMAGE STYLES */
+/***************************/
+
+.bg-cover-top {
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
+}
+.bg-cover-center {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.bg-cover-bottom {
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+.bg-contain-top {
+	background-size: contain;
+	background-position: top;
+	background-repeat: no-repeat;
+}
+.bg-contain-center {
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.bg-contain-bottom {
+	background-size: contain;
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+
+.bg-no-repeat {
+	background-repeat: no-repeat;
+}

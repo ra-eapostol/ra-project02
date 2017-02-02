@@ -1,0 +1,51 @@
+
+
+  /*****************************************************************/
+ /*                         MOBILE STYLES                         */
+ /*****************************************************************/
+
+
+@media screen and (max-width: 767px) {
+
+ 
+
+/****************************************************
+ *                 mobile FEATURED                  *
+ ****************************************************/
+.owl-item.active {
+	width: $full;
+	display: flex;
+	justify-content: center;
+}
+
+} /* media query mobile end */
+
+
+  /************/
+ /* FEATURED */
+/************/
+
+.owl-item.active {
+	max-width: $quarter;
+}
+
+.featured {
+	margin-top: 50px;
+	/*max-height: 20vh;*/
+}
+
+.slider {
+	overflow-x: hidden;
+}
+
+.ctg-type {
+	/*height: auto;*/
+	font-size: 0.9rem;
+}
+
+
+.item-name{
+	margin: 10px 0;
+}
+
+

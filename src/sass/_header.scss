@@ -1,0 +1,105 @@
+
+
+  /*****************************************************************/
+ /*                         MOBILE STYLES                         */
+ /*****************************************************************/
+
+
+@media screen and (max-width: 767px) {
+
+  
+  /**************************************************************/
+ /*                       mobile HEADER                        */
+/**************************************************************/
+
+.navbar {
+	order: 2;
+	border-top: 1px solid $grey;
+	padding: 15px 30px;
+}
+
+} /* media query mobile end */
+
+  /****************************************/
+ /*            TABLET STYLES             */
+/****************************************/
+
+@media screen and (min-width: 768px) {
+	.header {
+		flex-wrap: wrap;
+		padding: 5px;
+		.navbar {
+			ul { 
+				li {
+					padding: 0 15px;
+				}
+			}
+		}
+	}
+} /* TABLET END */
+
+
+
+.header {
+	flex-wrap: wrap;
+	padding: 5px;
+	position: fixed;
+	background-color: white;
+	z-index: 99;
+
+
+	.image-container {
+		height: 10vh;
+		width: 25%;
+	}
+
+	.logo{
+		background-image: url('../assets/images/aloha-logo.svg');
+		// @include background-contain-center-no-repeat;
+	}
+
+	.cart{
+		background-image: url('../assets/images/cart-icon.svg');
+		// @include background-contain-center-no-repeat;
+		align-self: flex-end;
+		
+		.cart-total {
+			width: 20px;
+			height: 20px;
+			font-size: 12px;
+			padding: 4px 4px;
+			border-radius: $half;
+			background-color: $red;
+			color: $white;
+			text-align: center;
+			margin-left: -50px;
+		}
+	}
+
+
+
+
+
+.quantity-input {
+	width: 15%;
+	outline: none;
+	border: none;
+}
+
+
+.temp {
+	display: none;
+}
+
+.product-image {
+	width: 50px;
+	height: 50px;
+}
+}
+
+
+
+
+
+
+

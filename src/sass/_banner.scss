@@ -1,0 +1,101 @@
+
+  /*****************************************************************/
+ /*                         MOBILE STYLES                         */
+ /*****************************************************************/
+
+
+@media screen and (max-width: 767px) {
+
+  /************************************************************/
+ /*                         mobile BANNER                    */
+/************************************************************/
+
+.banner {
+	height: 90vh;
+	padding: 0 50px;
+}
+
+.banner-girl {
+	height: 83%;
+}
+
+ .collection-info {
+ 	line-height: 2.5;
+ 	padding: 0 20%;
+ }
+
+ .collection-info h4 {
+ 	font-size: 1.2rem;
+ 	font-weight: 500;
+ }
+
+ .collection-info h1 {
+ 	line-height: 1;
+ }
+
+} /* media query mobile end */
+
+  /****************************************/
+ /*            TABLET STYLES             */
+/****************************************/
+
+@media screen and (min-width: 768px) {
+
+  /*************************************/
+ /*               BANNER              */
+/*************************************/
+
+.banner {
+	height: 60vh;
+}
+
+.banner-girl {
+	height: $half;
+}
+
+.banner h4 {
+	font-size: 1.3rem;
+	font-weight: $medium-font-weight;
+}
+
+
+} /* TABLET END */
+
+
+  /*****************************************/
+ /*            DESKTOP STYLES             */
+/*****************************************/
+
+@media screen and (min-width: 1240px) {
+
+/* BANNER */
+
+.banner {
+	height: 90vh;
+}
+
+.banner-girl {
+	height: 80%;
+}
+
+
+} /* DESKTOP END */
+
+
+  /**********/
+ /* BANNER */
+/**********/
+
+.banner{
+	background-image: url('../../assets/images/banner.jpg');
+	@include background-cover-center-no-repeat;
+	margin-top: 150px;
+}
+
+
+
+.collection-info {
+	height: 20%;
+	z-index: 2;
+}
+

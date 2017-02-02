@@ -1,0 +1,46 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	max-width: $full;
+	overflow-x: hidden;
+}
+
+body {
+	max-width: $full;
+}
+
+
+h1, h2,h3,h4,h5,h6 {
+	font-family: $primary-font;
+}
+
+h1 {
+	font-size: 3.5rem;
+}
+h4 {
+	font-size: 1.5rem;
+}
+
+
+p {
+	line-height: 2.0;
+}
+
+ ul, a, p {
+ 	text-decoration: none;
+ 	font-family: $secondary-font;
+ }
+
+
+
+  /************/
+ /* CLEARFIX */
+/************/
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
