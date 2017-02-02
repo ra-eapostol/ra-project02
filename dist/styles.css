@@ -1086,6 +1086,9 @@ ul, a, p {
 /************/
 /* FEATURED */
 /************/
+.owl-carousel {
+  overflow-x: hidden; }
+
 .owl-item.active {
   max-width: 25%; }
 

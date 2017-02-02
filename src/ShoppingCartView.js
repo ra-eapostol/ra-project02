@@ -28,18 +28,15 @@ export default class ShoppingCartView {
 		let cart = theApp.ShoppingCart.cart;
 		let cartBox = document.getElementById('cart-box');
 		cartBox.innerHTML = '';
-		let total = 0;
-		let newtotal = 0;
-		
+		theApp.ShoppingCart.updateTotal();
+		let total = theApp.ShoppingCart.total;
+		console.log(total);
 		if (Object.keys(cart).length > 0) {
 			for (let sku in cart) {
 				console.log('Creating new row');
 
 				let product = cart[sku];
-				let sku = sku;
-
-				total += parseFloat(product.quantity) * parseFloat(product.price);
-				newtotal = total.toFixed(2);				
+				let sku = sku;				
 
 				let home = $("#cart-box");
 				let productRow = $(".temp").clone();
@@ -78,8 +75,8 @@ export default class ShoppingCartView {
 			$('#cart-main').fadeToggle();
         	$('#cart-main').css('display','flex');			
 		}
-		if(newtotal > 0) {
-			$('.total').html(newtotal);
+		if(total > 0) {
+			$('.total').html(total);
 		}
 
 
@@ -93,7 +90,8 @@ export default class ShoppingCartView {
         	// delete theApp.ShoppingCart.cart[rowID];
         	delete cart[rowID];
         	console.log(cart);
-        	total = updateCart(theApp.ShoppingCart.cart);
+        	theApp.ShoppingCart.updateTotal();
+        	total = theApp.ShoppingCart.total;
         	// $('.total').html(updateCart(theApp.ShoppingCart.cart));
         	$('.total').html(total);
         	if(total == 0) {
@@ -115,15 +113,17 @@ export default class ShoppingCartView {
         	console.log(input.value);
         	if (input.value == 0) {
         		delete cart[skuID];
+        		theApp.ShoppingCart.updateTotal();
         		cartBox.removeChild(row);
         	} else {
         		theApp.ShoppingCart.cart[skuID].quantity = input.value;
-        		total = updateCart(theApp.ShoppingCart.cart);
+        		theApp.ShoppingCart.updateTotal();
+        		total = theApp.ShoppingCart.total;
         		$('.total').html(total);
         	}
         	document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
-        	$('#cart-main').slideToggle();
-        	$('#cart-main').slideToggle();
+        	// $('#cart-main').slideToggle();
+        	// $('#cart-main').slideToggle();
 
         })
 		

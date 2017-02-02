@@ -6,7 +6,7 @@ export default class ShoppingCart {
 		/* When a new instance of ShoppingCart is created, it receives one
 		   property, an empty cart object.*/
 		this.cart = {};
-		this.total = 0;
+		this.total;
 
 	}
 
@@ -33,12 +33,13 @@ export default class ShoppingCart {
 			console.log(sku);
 			if (sku != undefined || sku != null){
 				theApp.ShoppingCart.addToCart(sku, product[0].name, product[0].image, product[0].regularPrice);
-			// let name = document.querySelector(`.product-name[data-sku='${sku}']`).getAttribute('data-name');
-			// let image = document.querySelector(`.product-image[data-sku='${sku}']`).getAttribute('data-image');
-			// let price = parseFloat(document.querySelector(`.product-price[data-sku='${sku}']`).getAttribute('data-price'));			
-			// theApp.ShoppingCart.addToCart(sku,name,image,price);
 				document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
 			}
+		});
+
+		$('.quickView-addToCart').on('click', function() {
+			$('.overlay').fadeToggle();
+			$('.quickView').fadeToggle();
 		});
 
 		$('.clearCartButton').on('click', function() {
@@ -54,13 +55,7 @@ export default class ShoppingCart {
 			};
 
 			let product = theApp.products.filter(checkSku);
-			console.log(product);
 
-			console.log('viewing');
-			// let product = theApp.products.filter(checkSku);
-			console.log(product[0].image);
-			console.log(product[0].name);
-			console.log(product[0]);
 			let quickView = $('.quickView');
 
 			quickView.children('.flex-row')
@@ -70,12 +65,12 @@ export default class ShoppingCart {
 				"background-size": "contain",
 				"background-position": "cover",
 				"background-repeat": "no-repeat",
-				// "width": "100px",
 				"height": "100px"});
 
 			$('.prod-name').html(`${product[0].name}`);
 			$('.prod-price').html(`${product[0].regularPrice}`)
 			$('.quickView-addToCart').attr('data-sku', `${product[0].sku}`);
+			$('.prod-desc').html(`${product[0].longDescription}`);
 			console.log($('.quickView-addToCart'));
 
 			quickView.children('.flex-row')
@@ -95,47 +90,6 @@ export default class ShoppingCart {
 			$('.quickView').fadeToggle();
 		})					
 	}
-
-	// productProcessor(theApp) {
-	// 	let that = this;
-	// 	let eventHandler = function(e) {
-	// 		that.results(e,theApp);
-	// 	};
-	// 	return eventHandler;
-	// }
-
-	results(e,theApp) {
-		let className = e.path[0].className;
-		// console.log(sku);
-		// console.log(e.path);
-		// if (className == 'addToCartButton') {
-		// $('.addToCartButton').on('click', function(){
-		// 	let sku = e.path[0].attributes[1].nodeValue;
-		// 	let name = document.querySelector(`.product-name[data-sku='${sku}']`).getAttribute('data-name');
-		// 	let image = document.querySelector(`.product-image[data-sku='${sku}']`).getAttribute('data-image');
-		// 	let price = parseFloat(document.querySelector(`.product-price[data-sku='${sku}']`).getAttribute('data-price'));			
-		// 	theApp.ShoppingCart.addToCart(sku,name,image,price);
-		// 	document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
-		// });
-		// } 
-		// else if (className == 'clearCartButton') {
-		// $('.clearCartButton').on('click', function() {
-		// 	console.log('clearing');
-		// 	console.log(this);
-		// 	this.clearCart();
-		// });
-		// }
-
-		// else if (className == 'quickViewButton'){
-		// $('.quickViewButton').on('click', function() {
-		// 	console.log('viewing');
-		// 	console.log(this.dataset.sku);
-		// });
-
-
-		// }
-	}
-
 
 	addToCart(sku, name, image, price) {
 		/* First, in order to use addToCart, we'll have to pass it 4 arguments:
@@ -158,6 +112,7 @@ export default class ShoppingCart {
 			this.cart[sku].quantity ++;
 		};
 		console.log(this.cart);
+		this.updateTotal();
 	}
 
 	removeItemFromCart(sku) {
@@ -165,6 +120,7 @@ export default class ShoppingCart {
 		   the item in the ShoppingCart, and then delete that property all together
 		   from this.cart */
 		delete this.cart[sku];
+		this.updateTotal();
 	}
 
 	updateQuantity(sku, quantity) {
@@ -184,6 +140,7 @@ export default class ShoppingCart {
 		   	this.removeItemFromCart(sku);
 
 		   }
+		   this.updateTotal();
 	}
 
 	clearCart() {
@@ -193,11 +150,22 @@ export default class ShoppingCart {
 		console.log('clearing...');
 		this.cart = {};
 		document.getElementById("cart-box").innerHTML = '';
+		this.updateTotal();
 		document.cookie = '';
 		console.log(document.cookie);
 		$('.total').empty();
 		$('#cart-main').slideToggle();
 		$('.overlay').fadeToggle();
+	}
+
+	updateTotal() {
+		let total = 0;
+		for (let sku in this.cart) {
+			let product = this.cart[sku];
+			total += product.quantity * product.price;
+		}
+		this.total = total.toFixed(2);
+		console.log(this.total);
 	}
 
 }

@@ -25,6 +25,10 @@
  /* FEATURED */
 /************/
 
+.owl-carousel {
+	overflow-x: hidden;
+}
+
 .owl-item.active {
 	max-width: $quarter;
 }
