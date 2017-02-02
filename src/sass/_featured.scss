@@ -49,3 +49,15 @@
 }
 
 
+.quickView {
+	width: 50%;
+	margin: 20% 25%;
+	padding: 50px;
+	border: 1px solid black;
+	z-index: 101;
+	position: fixed;
+	display: none;
+	background: white;
+	-webkit-transform: translateZ(0)
+}
+

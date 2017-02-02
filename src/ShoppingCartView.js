@@ -23,6 +23,8 @@ export default class ShoppingCartView {
 	results(e, theApp) {
 		// console.log(e);
 		// console.log(theApp);
+
+		// $('.quickView').hide();
 		let cart = theApp.ShoppingCart.cart;
 		let cartBox = document.getElementById('cart-box');
 		cartBox.innerHTML = '';

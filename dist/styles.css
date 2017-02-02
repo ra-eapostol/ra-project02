@@ -846,6 +846,14 @@ ul, a, p {
 .bg-no-repeat {
   background-repeat: no-repeat; }
 
+.overlay {
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  z-index: 90;
+  display: none; }
+
 /*****************************************************************/
 /*                         MOBILE STYLES                         */
 /*****************************************************************/
@@ -912,14 +920,6 @@ ul, a, p {
   height: 50vh; }
   .cart-main .temp {
     display: none; }
-
-.overlay {
-  min-height: 100vh;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
-  position: fixed;
-  z-index: 90;
-  display: none; }
 
 /*****************************************************************/
 /*                         MOBILE STYLES                         */
@@ -1102,6 +1102,17 @@ ul, a, p {
 
 .item-name {
   margin: 10px 0; }
+
+.quickView {
+  width: 50%;
+  margin: 20% 25%;
+  padding: 50px;
+  border: 1px solid black;
+  z-index: 101;
+  position: fixed;
+  display: none;
+  background: white;
+  -webkit-transform: translateZ(0); }
 
 /*****************************************************************/
 /*                         MOBILE STYLES                         */

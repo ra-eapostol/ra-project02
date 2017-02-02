@@ -83,6 +83,7 @@ export default class CatalogView {
             let viewButtonTextNode = document.createTextNode("Quick View");
             quickViewBtn.appendChild(viewButtonTextNode);
             quickViewBtn.setAttribute("class", "quickViewButton");
+            quickViewBtn.setAttribute("data-sku", product.sku)
 
 
             newDiv.appendChild(prodImg);
@@ -97,6 +98,9 @@ export default class CatalogView {
 
         }
         this.initCarousel();
+
+
+
     }
 
 
