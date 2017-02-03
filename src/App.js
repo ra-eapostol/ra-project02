@@ -2,11 +2,13 @@ import BestBuyWebService from './BestBuyWebService';
 import ShoppingCart from './ShoppingCart';
 import CatalogView from './CatalogView';
 import ShoppingCartView from './ShoppingCartView';
+import StripePayment from './StripePayment.js';
 
 export default class App {
 
 	constructor() {
 		console.log(document.cookie);
+		this.stripe = new StripePayment();
 		this.products = null;
 		this.jsonData = null;
 		this.ShoppingCart = new ShoppingCart();

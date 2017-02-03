@@ -14,6 +14,12 @@
   		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   		crossorigin="anonymous"></script>
 
+  		<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+  		<script type="text/javascript">
+  			Stripe.setPublishableKey('pk_test_ZxgockgZnhf735YmbUAszMqe');
+		</script>
+
 <!-- ############################################################ 
                          STYLESHEETS                       
 ############################################################ -->
@@ -34,7 +40,7 @@
 
 
 
-		<header class="header width-100 ">
+		<header class="header flex-row justify-content-space-between width-100 ">
 			<div id="logo" class="logo image-container xs-width-30 sm-width-20 bg-contain-center"></div>
 			<div class="navbar flex-center-center xs-width-100 sm-width-30">
 				<ul class="flex-space-between-center width-100">
@@ -69,6 +75,38 @@
 				</div>		
 			
 			<div class="cart-box" id="cart-box"></div>
+
+			<div class="cart-form" id="cart-form">
+				<form action="/your-charge-code" method="POST" id="payment-form">
+					<span class="payment-errors"></span>
+
+					<div class="form-row">
+					  <label>
+					    <span>Card Number</span>
+					    <input type="text" size="20" data-stripe="number" required>
+					  </label>
+					</div>
+
+					<div class="form-row">
+					  <label>
+					    <span>Expiration (MM/YY)</span>
+					    <input type="text" size="2" data-stripe="exp_month" required>
+					  </label>
+					  <span> / </span>
+					  <input type="text" size="2" data-stripe="exp_year" required>
+					</div>
+
+					<div class="form-row">
+					  <label>
+					    <span>CVC</span>
+					    <input type="text" size="4" data-stripe="cvc" required>
+					  </label>
+					</div>
+
+
+					<input type="submit" class="submit" value="Submit Payment">
+				</form>
+			</div>
 			
 			<div class="cart-footer flex-row justify-content-space-between">
 				

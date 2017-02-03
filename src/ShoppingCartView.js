@@ -119,7 +119,9 @@ export default class ShoppingCartView {
         		total = theApp.ShoppingCart.total;
         		$('.total').html(total);
         	}
-        	
+        
+
+
         	document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
         	
         	

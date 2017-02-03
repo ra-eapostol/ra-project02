@@ -34,6 +34,7 @@ export default class ShoppingCart {
 		});
 
 		$('.quickView-addToCart').on('click', function() {
+			console.log('clicked');
 			$('.overlay').fadeToggle();
 			$('.quickView').fadeToggle();
 		});
@@ -44,7 +45,15 @@ export default class ShoppingCart {
 			theApp.ShoppingCart.clearCart();
 		});
 
+
+		$('.checkoutButton').on('click', function() {
+        	$('#cart-box').fadeToggle('fast', function(){
+        		$('#cart-form').fadeToggle();
+        	})
+        })
+
 		$('.quickViewButton').on('click', function() {
+			console.log('quickView clicked');
 			let sku = this.dataset.sku;
 			let checkSku = function(product) {
 				return product.sku == sku;

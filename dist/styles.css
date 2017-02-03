@@ -924,6 +924,9 @@ ul, a, p {
     display: none; }
   .cart-main .cart-box {
     overflow-y: auto; }
+  .cart-main .cart-form {
+    display: none;
+    overflow-y: auto; }
 
 /*****************************************************************/
 /*                         MOBILE STYLES                         */
