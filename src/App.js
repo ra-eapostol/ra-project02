@@ -50,9 +50,7 @@ export default class App {
 
 			this.products = this.bbws.getProducts();
 			this.catalogView.addProductsToCarousel(this.products);
-
-		// this.showCatalog();
-		// console.log(this.products);
+		
 		}
 	}
 

@@ -17,11 +17,6 @@ export default class ShoppingCart {
 		theApp.buildCartView();
 		let buttons = document.getElementsByTagName('button');
 
-		
-		/*for (let i=0; i<buttons.length; i++) {
-			let button = buttons[i];
-			button.addEventListener('click', this.productProcessor(theApp),false);
-		}*/
 		$('.addToCartButton').on('click', function(){
 			let sku = this.dataset.sku;
 			
@@ -114,6 +109,7 @@ export default class ShoppingCart {
 		};
 		console.log(this.cart);
 		this.updateTotal();
+
 	}
 
 	removeItemFromCart(sku) {

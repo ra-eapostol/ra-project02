@@ -52,29 +52,32 @@
 			</div>		
 		</header>
 
-		<section class="cart-main width-100 flex-col flex-center-center" id="cart-main">
+		<section class="cart-main width-70 flex-col flex-center-center" id="cart-main">
+				<div class="cart-header">YOUR CART</div>
+				
 				<div class="cart-row temp">
-					<div class="product-image"></div>
-					<div class="product-name"></div>
-					<div class="product-price"></div>
-					<div class="product-quantity">
+					<div class="product-image widht-20"></div>
+					<div class="product-name widht-20"></div>
+					<div class="product-price widht-20"></div>
+					<div class="product-quantity widht-20">
 						<input class="quantity-input" type="number" min="1">
-					</div>
-					<div class="cart-buttons">
+					</div>	
+					<div class="cart-buttons widht-20">
 						<button class="updateButton">Update</button>
 						<button class="deleteButton">Delete</button>
 					</div>
 				</div>		
-			<div class="cart-box" id="cart-box">
-
-			</div>
-
-			<div class="total flex-row justify-content-flex-end">
+			
+			<div class="cart-box" id="cart-box"></div>
+			
+			<div class="cart-footer flex-row justify-content-space-between">
 				
-			</div>
-			<div class="cart-buttons flex-row justify-content-space-between">
-				<button id="clearCartButton" class="clearCartButton">Clear Cart</button>
-				<button id="checkoutButton" class="checkoutButton">Checkout</button>
+				<div class="cart-buttons flex-row justify-content-space-between">
+					<button id="clearCartButton" class="clearCartButton">Clear Cart</button>
+					<button id="checkoutButton" class="checkoutButton">Checkout</button>
+				</div>
+
+				<div class="total flex-row justify-content-flex-end"></div>
 			</div>
 
 		</section>

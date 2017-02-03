@@ -21,10 +21,7 @@ export default class ShoppingCartView {
 	}
 
 	results(e, theApp) {
-		// console.log(e);
-		// console.log(theApp);
-
-		// $('.quickView').hide();
+		
 		let cart = theApp.ShoppingCart.cart;
 		let cartBox = document.getElementById('cart-box');
 		cartBox.innerHTML = '';
@@ -84,24 +81,24 @@ export default class ShoppingCartView {
         	let rowID = this.dataset.sku;        
         	let row = this.parentNode.parentNode;
         	let cartBox = document.getElementById('cart-box');
-        	$('#cart-box').fadeToggle( function() {cartBox.removeChild(row);});
+        	$(this).parent().parent().fadeToggle( function() {cartBox.removeChild(row);});
         	   
-        	// total -=      
-        	// delete theApp.ShoppingCart.cart[rowID];
+        	
+        	
         	delete cart[rowID];
         	console.log(cart);
         	theApp.ShoppingCart.updateTotal();
         	total = theApp.ShoppingCart.total;
-        	// $('.total').html(updateCart(theApp.ShoppingCart.cart));
+
         	$('.total').html(total);
         	if(total == 0) {
         		$('.overlay').fadeToggle();
         		$('.cart-main').fadeToggle();
         	}
         	document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
-        	// $('#cart-main').slideToggle();
         	
-        	$('#cart-box').fadeToggle();
+        	
+        	$(this).parent().parent().fadeToggle();
 
         })
 
@@ -111,6 +108,7 @@ export default class ShoppingCartView {
         	let input = document.getElementById(skuID);
         	let row = this.parentNode.parentNode;
         	console.log(input.value);
+        	
         	if (input.value == 0) {
         		delete cart[skuID];
         		theApp.ShoppingCart.updateTotal();
@@ -121,9 +119,10 @@ export default class ShoppingCartView {
         		total = theApp.ShoppingCart.total;
         		$('.total').html(total);
         	}
+        	
         	document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
-        	// $('#cart-main').slideToggle();
-        	// $('#cart-main').slideToggle();
+        	
+        	
 
         })
 		
