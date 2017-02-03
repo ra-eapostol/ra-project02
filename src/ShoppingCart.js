@@ -34,14 +34,14 @@ export default class ShoppingCart {
 		});
 
 		$('.quickView-addToCart').on('click', function() {
-			console.log('clicked');
+			// console.log('clicked');
 			$('.overlay').fadeToggle();
 			$('.quickView').fadeToggle();
 		});
 
 		$('.clearCartButton').on('click', function() {
 			console.log('clearing');
-			console.log(this);
+			// console.log(this);
 			theApp.ShoppingCart.clearCart();
 		});
 
@@ -50,6 +50,18 @@ export default class ShoppingCart {
         	$('#cart-box').fadeToggle('fast', function(){
         		$('#cart-form').fadeToggle();
         	})
+        	$('.cart-buttons').fadeToggle();
+        	$('.cart-form-back-button').fadeToggle();
+        })
+
+        $('.formBackButton').on('click', function(){
+        	$('.cart-form-back-button').fadeToggle('fast', function(){
+        		$('.cart-buttons').fadeToggle();
+        	})
+        	$('#cart-form').fadeToggle('fast', function(){
+        		$('#cart-box').fadeToggle();
+        	})
+
         })
 
 		$('.quickViewButton').on('click', function() {
@@ -76,7 +88,7 @@ export default class ShoppingCart {
 			$('.prod-price').html(`${product[0].regularPrice}`)
 			$('.quickView-addToCart').attr('data-sku', `${product[0].sku}`);
 			$('.prod-desc').html(`${product[0].longDescription}`);
-			console.log($('.quickView-addToCart'));
+			// console.log($('.quickView-addToCart'));
 
 			quickView.children('.flex-row')
 			.children('flex-col')
@@ -116,7 +128,7 @@ export default class ShoppingCart {
 			   by 1. */
 			this.cart[sku].quantity ++;
 		};
-		console.log(this.cart);
+		// console.log(this.cart);
 		this.updateTotal();
 
 	}
@@ -158,7 +170,7 @@ export default class ShoppingCart {
 		document.getElementById("cart-box").innerHTML = '';
 		this.updateTotal();
 		document.cookie = '';
-		console.log(document.cookie);
+		// console.log(document.cookie);
 		$('.total').empty();
 		$('#cart-main').slideToggle();
 		$('.overlay').fadeToggle();
@@ -182,7 +194,7 @@ export default class ShoppingCart {
 		} else {
 			$('.cart-total').hide();
 		}
-		console.log(this.total);
+		// console.log(this.total);
 	}
 
 }

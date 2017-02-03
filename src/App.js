@@ -7,7 +7,7 @@ import StripePayment from './StripePayment.js';
 export default class App {
 
 	constructor() {
-		console.log(document.cookie);
+		// console.log(document.cookie);
 		this.stripe = new StripePayment();
 		this.products = null;
 		this.jsonData = null;

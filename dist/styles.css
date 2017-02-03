@@ -927,6 +927,8 @@ ul, a, p {
   .cart-main .cart-form {
     display: none;
     overflow-y: auto; }
+  .cart-main .cart-form-back-button {
+    display: none; }
 
 /*****************************************************************/
 /*                         MOBILE STYLES                         */
@@ -1251,3 +1253,17 @@ ul, a, p {
 
 #cart-main {
   display: none; }
+
+button {
+  padding: 5px 10px;
+  background: none;
+  outline: none;
+  border: 1px solid green; }
+
+input {
+  outline: none;
+  border: none; }
+
+input[type=submit] {
+  border: 1px solid green;
+  background-color: none; }

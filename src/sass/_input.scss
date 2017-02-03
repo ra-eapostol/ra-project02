@@ -1,0 +1,9 @@
+input {
+	outline: none;
+	border: none;
+}
+
+input[type=submit] {
+	border: 1px solid green;
+	background-color: none;
+}
