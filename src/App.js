@@ -17,6 +17,14 @@ export default class App {
 			console.log("found something");
 			this.ShoppingCart.cart = JSON.parse(document.cookie);
 		}
+		this.ShoppingCart.updateTotal();
+
+		if (this.ShoppingCart.quantityTotal > 0) {
+			$('.cart-total').html(`${this.ShoppingCart.quantityTotal}`)
+			$('.cart-total').fadeIn();
+		} else {
+			$('.cart-total').hide();
+		}
 
 	}
 

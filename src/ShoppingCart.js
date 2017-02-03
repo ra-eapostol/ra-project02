@@ -6,6 +6,7 @@ export default class ShoppingCart {
 		/* When a new instance of ShoppingCart is created, it receives one
 		   property, an empty cart object.*/
 		this.cart = {};
+		this.quantityTotal;
 		this.total;
 
 	}
@@ -160,11 +161,22 @@ export default class ShoppingCart {
 
 	updateTotal() {
 		let total = 0;
+		let quantity = 0;
 		for (let sku in this.cart) {
 			let product = this.cart[sku];
+			quantity += parseInt(product.quantity);
 			total += product.quantity * product.price;
 		}
 		this.total = total.toFixed(2);
+		this.quantityTotal = parseInt(quantity);
+		
+		if (this.quantityTotal > 0) {
+
+			$('.cart-total').html(`${parseInt(this.quantityTotal)}`);
+			$('.cart-total').fadeIn();
+		} else {
+			$('.cart-total').hide();
+		}
 		console.log(this.total);
 	}
 
