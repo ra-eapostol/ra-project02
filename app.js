@@ -23,6 +23,9 @@ app.get('/', function(req, res) {
 })
 
 app.get('/paysuccess', function(req, res) {
+	// res.render('paysuccess', {
+		
+	// })
 	res.send('Payment successful!')
 });
 
