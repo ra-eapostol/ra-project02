@@ -1267,3 +1267,6 @@ input {
 input[type=submit] {
   border: 1px solid green;
   background-color: none; }
+
+.owl-stage {
+  overflow-x: hidden; }

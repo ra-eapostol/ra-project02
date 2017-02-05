@@ -94,6 +94,7 @@ export default class StripePayment {
 
 	    // Submit the form:
 	    $form.get(0).submit();
+	    sessionStorage.clear();
 
 	  }
 
