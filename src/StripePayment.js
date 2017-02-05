@@ -86,7 +86,7 @@ export default class StripePayment {
 
 	    // Insert the token ID into the form so it gets submitted to the server:
 	    $form.append($('<input type="hidden" name="stripeToken">').val(token));
-	    $form.append($('<input type="hidden" name="chargeAmount">').val(parseFloat($('.total').html())*100));
+	    $form.append($('<input type="hidden" name="chargeAmount">').val(parseInt(parseFloat($('.total').html())*100)));
 
 	    // Submit the form:
 	    $form.get(0).submit();
