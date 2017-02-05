@@ -2,12 +2,12 @@
 
 TO RUN:
 
-1. open up a terminal/console
+- open up a terminal/console
 
-2. run the command #'webpack'# in order to compile/build js files
+- run the command _'webpack'_ in order to compile/build js files
 
-3. open up another terminal
+- open up another terminal
 
-4. run the command #'node app.js'
+- run the command _'node app.js'_
 
-5. In your web browser, navigate to #localhost:3000
+- In your web browser, navigate to _localhost:3000_
