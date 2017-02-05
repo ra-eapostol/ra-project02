@@ -19,11 +19,11 @@
 <!-- ############################################################ 
                          STYLESHEETS                       
 ############################################################ -->
-		<link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
-		<link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="../assets/owlcarousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="../assets/owlcarousel/assets/owl.theme.default.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:300,400,500,700" rel="stylesheet">
 		<!-- <link rel="stylesheet" type="text/css" href="dist/style.min.css"> -->
-		<link rel="stylesheet" type="text/css" href="dist/styles.css">
+		<link rel="stylesheet" type="text/css" href="../dist/styles.css">
 		<script src="https://use.fontawesome.com/56b8e51a02.js"></script>
 	</head>
 	
@@ -74,8 +74,7 @@
 			<div class="cart-box" id="cart-box"></div>
 
 			<div class="cart-form" id="cart-form">
-				<form action="localhost:8081/StripeHandling.js" method="POST" id="payment-form">
-				<!-- <form id="payment-form"> -->
+				<!-- <form action="localhost:8081/StripeHandling.js" method="POST" id="payment-form">
 					<span class="payment-errors"></span>
 
 					<div class="form-row">
@@ -103,6 +102,20 @@
 
 
 					<input type="submit" class="submit" value="Submit Payment">
+				</form> -->
+				<form action="/charge" method="POST">
+					<script type="text/javascript" 
+					src="https://checkout.stripe.com/checkout.js"
+					class="stripe-button"
+					data-key = "pk_test_ZxgockgZnhf735YmbUAszMqe"
+					data-amount = "30000"
+					data-name = "cart stuff"
+					data-description = "what is in your cart"
+					data-locale = "auto"
+					data-currency = "cad"
+					>
+					</script>
+					<input type="hidden" name="chargeAmount" value="30000">
 				</form>
 			</div>
 			
@@ -252,7 +265,7 @@
 ############################################################ -->
 
 		<script src="assets/owlcarousel/owl.carousel.min.js"></script>
-		<script src="build/bundle.js"></script>
+		<script src="../build/bundle.js"></script>
 		  		<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 
   		<script type="text/javascript">

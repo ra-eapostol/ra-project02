@@ -1,11 +1,13 @@
 // Set your secret key: remember to change this to your live secret key in production
 // See your keys here: https://dashboard.stripe.com/account/apikeys
-const express 	 = require("express");
-const stripe 	 = require("stripe")("sk_test_l8ZYZaFjKkv6MuOL9rvV8HqB");
-const bodyParser = require("body-parser");
+
 
 class StripeHandling {
 	constructor() {
+		const express 	 = require("express");
+		const stripe 	 = require("stripe")("sk_test_l8ZYZaFjKkv6MuOL9rvV8HqB");
+		const bodyParser = require("body-parser");	
+			
 		console.log("hey i'm in Stripe Handling now");
 		this.app = express();
 		this.init()
