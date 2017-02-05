@@ -69,6 +69,8 @@ export default class StripePayment {
 	  // Grab the form:
 	  var $form = $('#payment-form');
 	  console.log('handling...')
+	  let total = Math.round(parseFloat($('.total').html())*100);
+	  console.log(total);
 
 	  if (response.error) { // Problem!
 	  	this.reportError(response.error.message);
@@ -86,7 +88,9 @@ export default class StripePayment {
 
 	    // Insert the token ID into the form so it gets submitted to the server:
 	    $form.append($('<input type="hidden" name="stripeToken">').val(token));
-	    $form.append($('<input type="hidden" name="chargeAmount">').val(parseInt(parseFloat($('.total').html())*100)));
+	    // $form.append($('<input type="hidden" name="chargeAmount">').val(parseInt(parseFloat($('.total').html())*100)));
+	    $form.append($('<input type="hidden" name="chargeAmount" id="secretCharge">').val(total));
+	    console.log($('#secretCharge'));
 
 	    // Submit the form:
 	    $form.get(0).submit();

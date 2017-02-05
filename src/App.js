@@ -8,12 +8,13 @@ export default class App {
 
 	constructor() {
 		// console.log(document.cookie);
-		this.stripe = new StripePayment();
+		
 		this.products = null;
 		this.jsonData = null;
 		this.ShoppingCart = new ShoppingCart();
 		this.catalogView = new CatalogView();
 		this.initBestBuyWebService();
+		this.stripe = new StripePayment();
 
 		if (document.cookie != '') {
 			console.log("found something");
