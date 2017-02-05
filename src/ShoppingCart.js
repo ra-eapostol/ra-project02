@@ -29,7 +29,8 @@ export default class ShoppingCart {
 			console.log(sku);
 			if (sku != undefined || sku != null){
 				theApp.ShoppingCart.addToCart(sku, product[0].name, product[0].image, product[0].regularPrice);
-				document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
+				// document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
+				sessionStorage.setItem('cart', JSON.stringify(theApp.ShoppingCart.cart));
 			}
 		});
 
@@ -173,7 +174,8 @@ export default class ShoppingCart {
 		this.cart = {};
 		document.getElementById("cart-box").innerHTML = '';
 		this.updateTotal();
-		document.cookie = '';
+		// document.cookie = '';
+		sessionStorage.clear();
 		// console.log(document.cookie);
 		$('.total').empty();
 		$('#cart-main').slideToggle();
@@ -198,6 +200,7 @@ export default class ShoppingCart {
 		} else {
 			$('.cart-total').hide();
 		}
+		
 		// console.log(this.total);
 	}
 

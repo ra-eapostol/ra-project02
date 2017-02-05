@@ -123,7 +123,8 @@ export default class ShoppingCartView {
         
 
 
-        	document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
+        	// document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
+        	sessionStorage.setItem('cart', JSON.stringify(theApp.ShoppingCart.cart));
         	
         	
 

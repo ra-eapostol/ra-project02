@@ -16,9 +16,10 @@ export default class App {
 		this.initBestBuyWebService();
 		this.stripe = new StripePayment();
 
-		if (document.cookie != '') {
+		// if (document.cookie != '') {
+		if (sessionStorage.getItem('cart') != undefined && sessionStorage.getItem('cart')) {
 			console.log("found something");
-			this.ShoppingCart.cart = JSON.parse(document.cookie);
+			this.ShoppingCart.cart = JSON.parse(sessionStorage.getItem('cart'));
 		}
 		this.ShoppingCart.updateTotal();
 
