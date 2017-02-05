@@ -14,6 +14,14 @@
   		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   		crossorigin="anonymous"></script>
 
+  		<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+  		<script type="text/javascript">
+  			
+  			Stripe.setPublishableKey('pk_test_ZxgockgZnhf735YmbUAszMqe');
+
+		</script>
+
 
 
 <!-- ############################################################ 
@@ -74,7 +82,7 @@
 			<div class="cart-box" id="cart-box"></div>
 
 			<div class="cart-form" id="cart-form">
-				<!-- <form action="localhost:8081/StripeHandling.js" method="POST" id="payment-form">
+				<form action="charge" method="POST" id="payment-form">
 					<span class="payment-errors"></span>
 
 					<div class="form-row">
@@ -100,23 +108,29 @@
 					  </label>
 					</div>
 
+					<div class="form-row">
+						<label>
+							<span>TOTAL</span>
+							<input type="text" data-stripe="total" name="chargeTotal" id="form-total" disabled>
+						</label>
+					</div>
+					
 
 					<input type="submit" class="submit" value="Submit Payment">
-				</form> -->
-				<form action="/charge" method="POST">
+				</form>
+				<!-- <form action="/charge" method="POST">
 					<script type="text/javascript" 
 					src="https://checkout.stripe.com/checkout.js"
 					class="stripe-button"
 					data-key = "pk_test_ZxgockgZnhf735YmbUAszMqe"
-					data-amount = "30000"
 					data-name = "cart stuff"
 					data-description = "what is in your cart"
 					data-locale = "auto"
 					data-currency = "cad"
 					>
 					</script>
-					<input type="hidden" name="chargeAmount" value="30000">
-				</form>
+					<input type="hidden" name="chargeAmount" id="cart-charge-total">
+				</form> -->
 			</div>
 			
 			<div class="cart-footer flex-row justify-content-space-between">
@@ -130,7 +144,7 @@
 					<button class="formBackButton" id="formBackButton">Back</button>
 				</div>
 
-				<div class="total flex-row justify-content-flex-end"></div>
+				<div class="total flex-row justify-content-flex-end" id="cart-total"></div>
 			</div>
 
 		</section>
@@ -266,13 +280,7 @@
 
 		<script src="assets/owlcarousel/owl.carousel.min.js"></script>
 		<script src="../build/bundle.js"></script>
-		  		<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-
-  		<script type="text/javascript">
-  			
-  			Stripe.setPublishableKey('pk_test_ZxgockgZnhf735YmbUAszMqe');
-
-		</script>
+		  		
 
 	</body>
 </html>

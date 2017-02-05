@@ -45,10 +45,14 @@ export default class ShoppingCart {
 			theApp.ShoppingCart.clearCart();
 		});
 
+		// $('.stripe-button-el').on('click', function() {
+		// 	$('#cart-charge-total').attr("value", `${theApp.ShoppingCart.total}`);
+		// })
 
 		$('.checkoutButton').on('click', function() {
         	$('#cart-box').fadeToggle('fast', function(){
         		$('#cart-form').fadeToggle();
+        		// $('#cart-charge-total').attr("value", `${(theApp.ShoppingCart.total)*100}`);
         	})
         	$('.cart-buttons').fadeToggle();
         	$('.cart-form-back-button').fadeToggle();

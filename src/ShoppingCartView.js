@@ -75,6 +75,7 @@ export default class ShoppingCartView {
 		if(total > 0) {
 			$('.total').html(total);
 		}
+		console.log(typeof $('.total').html());
 
 
         $('.deleteButton').on('click', function() {

@@ -24,14 +24,16 @@ app.get('/', function(req, res) {
 
 app.get('/paysuccess', function(req, res) {
 	// res.render('paysuccess', {
-		
+
 	// })
 	res.send('Payment successful!')
 });
 
 app.post('/charge', function(req,res) {
 	let token = req.body.stripeToken;
+	console.log(token);
 	let chargeAmount = req.body.chargeAmount;
+	console.log(chargeAmount);
 	let charge = stripe.charges.create({
 		amount: chargeAmount,
 		currency: "cad",
@@ -41,6 +43,7 @@ app.post('/charge', function(req,res) {
 			console.log("Your card was declined");
 		}
 	});
+	console.log(charge);
 	console.log("Your payment was successful");
 	res.redirect('/paysuccess');
 
