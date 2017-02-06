@@ -35,6 +35,12 @@ export default class App {
 
 	initBestBuyWebService() {
 		this.bbws = new BestBuyWebService();
+		let d = new Date();
+		let time = d.getTime();
+		let interval = 24*60*60*1000;
+		if ((time - localStorage.getItem('time')) >= interval){
+			localStorage.clear();
+		};
 		this.bbws.getData(this);
 	}
 

@@ -15,9 +15,6 @@
 	padding: 0 50px;
 }
 
-.banner-girl {
-	height: 83%;
-}
 
  .collection-info {
  	line-height: 2.5;
@@ -89,7 +86,7 @@
 .banner{
 	background-image: url('../../assets/images/banner.jpg');
 	@include background-cover-center-no-repeat;
-	margin-top: 150px;
+	margin-top: 84px;
 }
 
 

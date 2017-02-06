@@ -10,11 +10,16 @@ export default class BestBuyWebService {
 
 
 	getData(theApp) {
-		let serviceChannel = new XMLHttpRequest();
-		let url = this.url;
-		serviceChannel.addEventListener('readystatechange', this.dataProcessor(theApp), false);
-		serviceChannel.open("GET", url, true);
-		serviceChannel.send();
+		if (localStorage.getItem('products') == null) {
+			let serviceChannel = new XMLHttpRequest();
+			let url = this.url;
+		
+			serviceChannel.addEventListener('readystatechange', this.dataProcessor(theApp), false);
+			serviceChannel.open("GET", url, true);
+			serviceChannel.send();
+		} else {
+			this.products = JSON.parse(localStorage.getItem('products'));
+		}
 	}
 
 	dataProcessor(theApp) {
@@ -38,7 +43,11 @@ export default class BestBuyWebService {
 	getProducts() {
 		if(this.jsonData != null) {
 			let jsonData = JSON.parse(this.jsonData);
+			let d = new Date();
+			let timeSet = d.getTime();
 			this.products = jsonData.products;
+			localStorage.setItem('products', JSON.stringify(jsonData.products));
+			localStorage.setItem('time', timeSet);
 			return this.products
 		}
 		return;

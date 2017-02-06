@@ -942,8 +942,6 @@ ul, a, p {
   .banner {
     height: 90vh;
     padding: 0 50px; }
-  .banner-girl {
-    height: 83%; }
   .collection-info {
     line-height: 2.5;
     padding: 0 20%; }
@@ -989,7 +987,7 @@ ul, a, p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: 150px; }
+  margin-top: 84px; }
 
 .collection-info {
   height: 20%;
@@ -1105,6 +1103,7 @@ ul, a, p {
 
 .featured {
   margin-top: 50px;
+  overflow-x: hidden;
   /*max-height: 20vh;*/ }
 
 .slider {
