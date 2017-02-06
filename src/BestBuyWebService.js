@@ -19,6 +19,7 @@ export default class BestBuyWebService {
 			serviceChannel.send();
 		} else {
 			this.products = JSON.parse(localStorage.getItem('products'));
+			theApp.products = this.products;
 		}
 	}
 
@@ -43,11 +44,11 @@ export default class BestBuyWebService {
 	getProducts() {
 		if(this.jsonData != null) {
 			let jsonData = JSON.parse(this.jsonData);
-			let d = new Date();
-			let timeSet = d.getTime();
+			// let d = new Date();
+			// let timeSet = d.getTime();
 			this.products = jsonData.products;
-			localStorage.setItem('products', JSON.stringify(jsonData.products));
-			localStorage.setItem('time', timeSet);
+			// localStorage.setItem('products', JSON.stringify(jsonData.products));
+			// localStorage.setItem('time', timeSet);
 			return this.products
 		}
 		return;

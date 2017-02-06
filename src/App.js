@@ -57,7 +57,7 @@ export default class App {
 
 
 	prepCart() {
-		if(this.jsonData != null) {
+		if(this.jsonData != null || this.products != null) {
 
 			this.products = this.bbws.getProducts();
 			this.catalogView.addProductsToCarousel(this.products);
