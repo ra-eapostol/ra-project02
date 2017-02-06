@@ -49,7 +49,7 @@ app.post('/', function(req,res) {
 	});
 	console.log(charge);
 	console.log("Your payment was successful");
-	// res.redirect('/');
+	res.redirect('/');
 
 });
 

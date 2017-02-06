@@ -47,8 +47,12 @@ export default class StripePayment {
 	  			total: total
 	  		}, thisStripePayment.stripeResponseHandler);
 	  		thisStripePayment.success();
+	  		$('.cart-main').addClass('border-green');
 	  		$('.form-close').on('click', function() {
 	  			theApp.ShoppingCart.clearCart();
+	  			// $('.payment-success').hide();
+	  			// $('.cart-box').show();
+	  			// $('.cart-footer').show()
 	  		})
 	  		sessionStorage.clear();
 
@@ -100,8 +104,10 @@ export default class StripePayment {
 	    console.log($('#secretCharge'));
 
 	    // Submit the form:
-	    $form.get(0).submit();
-	    sessionStorage.clear();
+	    $('.form-close').on('click', function() {
+	    	$form.get(0).submit();
+	    	sessionStorage.clear();
+	    });
 
 	  }
 
@@ -109,7 +115,7 @@ export default class StripePayment {
 	}
 
 	reportError(msg) {
-		$('.payment-errors').fadeToggle();
+		$('.payment-errors').show();
 		$('.payment-errors').text(msg).addClass('error');
 		$('.submit').prop('disabled', false);
 
@@ -119,6 +125,7 @@ export default class StripePayment {
 	success() {
 		$('.cart-form').hide();
 		$('.payment-errors').hide();
+		$('.cart-footer').hide();
 		$('.payment-success').fadeToggle();
 	}
 

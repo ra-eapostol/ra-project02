@@ -180,6 +180,11 @@ export default class ShoppingCart {
 		$('.total').empty();
 		$('#cart-main').slideToggle();
 		$('.overlay').fadeToggle();
+			  	$('.payment-success').hide();
+	  			$('.cart-box').show();
+	  			$('.cart-footer').show()
+	  			$('.cart-buttons').show();
+	  			$('.cart-form-back-button').hide();
 	}
 
 	updateTotal() {

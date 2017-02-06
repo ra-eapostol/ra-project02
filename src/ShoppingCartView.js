@@ -68,6 +68,7 @@ export default class ShoppingCartView {
 				productRow.addClass('flex-row justify-content-space-between');
 				productRow.appendTo("#cart-box");			
 			}
+			$('.payment-success').hide();
 			$('.overlay').fadeToggle();
 			$('#cart-main').fadeToggle();
         	$('#cart-main').css('display','flex');			
@@ -127,6 +128,7 @@ export default class ShoppingCartView {
         })
 
         $('.overlay').on('click', function() {
+        	$('.payment-success').hide();
         	$('.cart-main').hide();
         	$('.quickView').hide();
         	$('.overlay').hide();
