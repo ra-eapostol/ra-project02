@@ -1270,3 +1270,20 @@ input[type=submit] {
 
 .owl-stage {
   overflow-x: hidden; }
+
+.success-div {
+  width: 50%;
+  margin: 150px 25%;
+  margin-bottom: 0;
+  border: 1px solid #4bb543;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  text-align: center; }
+  .success-div .money-gif {
+    background-image: url("../assets/images/money.gif");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px; }

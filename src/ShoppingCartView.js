@@ -120,13 +120,16 @@ export default class ShoppingCartView {
         		total = theApp.ShoppingCart.total;
         		$('.total').html(total);
         	}
-        
-
 
         	// document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
         	sessionStorage.setItem('cart', JSON.stringify(theApp.ShoppingCart.cart));
         	
-        	
+        })
+
+        $('.overlay').on('click', function() {
+        	$('.cart-main').hide();
+        	$('.quickView').hide();
+        	$('.overlay').hide();
 
         })
 		

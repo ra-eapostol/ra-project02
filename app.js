@@ -5,14 +5,18 @@ const express 	 = require("express");
 const stripe 	 = require("stripe")("sk_test_l8ZYZaFjKkv6MuOL9rvV8HqB");
 const html 		 = require("html");
 const bodyParser = require("body-parser");	
+// const ejs 		 = require("ejs");
 			
-console.log("hey i'm in Stripe Handling now");
+// console.log("hey i'm in Stripe Handling now");
 let app = express();
 
 app.use(express.static(__dirname));
 
 // app.set('view engine', 'html');
 app.set('views', __dirname);
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -23,10 +27,10 @@ app.get('/', function(req, res) {
 })
 
 app.get('/paysuccess', function(req, res) {
-	// res.render('paysuccess', {
+	res.render('paysuccess', {
 
-	// })
-	res.send('Payment successful!')
+	})
+	// res.send('Payment successful!')
 });
 
 app.post('/charge', function(req,res) {
