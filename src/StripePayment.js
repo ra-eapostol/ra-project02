@@ -1,11 +1,11 @@
 export default class StripePayment {
 	constructor() {
 		this.token = {};
-		this.stripeCreateToken();
+		// this.stripeCreateToken(theApp);
 
 	}
 
-	stripeCreateToken() {
+	stripeCreateToken(theApp) {
 	  let $form = $('#payment-form');
 	  let thisStripePayment = this;
 	  $form.submit(function(event) {
@@ -14,44 +14,49 @@ export default class StripePayment {
 	    $form.find('.submit').prop('disabled', true);
 
 	    // Request a token from Stripe:
-	   let token =  Stripe.card.createToken($form, thisStripePayment.stripeResponseHandler);
+	   // let token =  Stripe.card.createToken($form, thisStripePayment.stripeResponseHandler);
 
 	   // console.log(token);
-	  	// let error = false;
-	  	// let ccNum = $('.card-number').val();
-	  	// let cvcNum = $('.card-cvc').val();
-	  	// let expMonth = $('.card-expiry-month').val();
-	  	// let expYear = $('.card-expiry-year').val();
-	  	// let total = $('#form-total').val();
+	  	let error = false;
+	  	let ccNum = $('.card-number').val();
+	  	let cvcNum = $('.card-cvc').val();
+	  	let expMonth = $('.card-expiry-month').val();
+	  	let expYear = $('.card-expiry-year').val();
+	  	let total = $('#form-total').val();
 
-	  	// if (!Stripe.card.validateCardNumber(ccNum)) {
-	  	// 	error = true;
-	  	// 	thisStripePayment.reportError('The credit card number is invalid');
-	  	// }
+	  	if (!Stripe.card.validateCardNumber(ccNum)) {
+	  		error = true;
+	  		thisStripePayment.reportError('The credit card number is invalid');
+	  	}
 
-	  	// if (!Stripe.card.validateCVC(cvcNum)) {
-	  	// 	error = true;
-	  	// 	thisStripePayment.reportError('The CVC number is invalid');
-	  	// }
-	  	// if (!Stripe.card.validateExpiry(expMonth, expYear)) {
-	  	// 	error = true;
-	  	// 	thisStripePayment.reportError('The expiration date is invalid');
-	  	// }
+	  	if (!Stripe.card.validateCVC(cvcNum)) {
+	  		error = true;
+	  		thisStripePayment.reportError('The CVC number is invalid');
+	  	}
+	  	if (!Stripe.card.validateExpiry(expMonth, expYear)) {
+	  		error = true;
+	  		thisStripePayment.reportError('The expiration date is invalid');
+	  	}
 
-	  	// if (!error) {
-	  	// 	let token = Stripe.card.createToken({
-	  	// 		number: ccNum,
-	  	// 		cvc: cvcNum,
-	  	// 		exp_month: expMonth,
-	  	// 		exp_year: expYear,
-	  	// 		total: total
-	  	// 	}, thisStripePayment.stripeResponseHandler);
-	  		
-	  	// 	// console.log(token);
-	  	// 	// thisStripePayment.token = token;
-	  	// 	// console.log(thisStripePayment.token);
-	  	// 	console.log('token created');
-	  	// }
+	  	if (!error) {
+	  		let token = Stripe.card.createToken({
+	  			number: ccNum,
+	  			cvc: cvcNum,
+	  			exp_month: expMonth,
+	  			exp_year: expYear,
+	  			total: total
+	  		}, thisStripePayment.stripeResponseHandler);
+	  		thisStripePayment.success();
+	  		$('.form-close').on('click', function() {
+	  			theApp.ShoppingCart.clearCart();
+	  		})
+	  		sessionStorage.clear();
+
+	  		// console.log(token);
+	  		// thisStripePayment.token = token;
+	  		// console.log(thisStripePayment.token);
+	  		console.log('token created');
+	  	}
 
 
 	    // Prevent the form from being submitted:
@@ -73,7 +78,9 @@ export default class StripePayment {
 	  console.log(total);
 
 	  if (response.error) { // Problem!
-	  	this.reportError(response.error.message);
+	  	console.log(response.error);
+	  	// console.log(thisStripePayment);
+	  	thisStripePayment.reportError(response.error.message);
 	    // Show the errors on the form:
 	    $form.find('.payment-errors').text(response.error.message);
 	    $form.find('.submit').prop('disabled', false); // Re-enable submission
@@ -102,12 +109,18 @@ export default class StripePayment {
 	}
 
 	reportError(msg) {
+		$('.payment-errors').fadeToggle();
 		$('.payment-errors').text(msg).addClass('error');
 		$('.submit').prop('disabled', false);
 
 		return false;
 	}
 
+	success() {
+		$('.cart-form').hide();
+		$('.payment-errors').hide();
+		$('.payment-success').fadeToggle();
+	}
 
 
 

@@ -80,10 +80,18 @@
 				</div>		
 			
 			<div class="cart-box" id="cart-box"></div>
-
+			
+			<span class="payment-success flex-center-center flex-col">
+				<h1>PAYMENT SUCCESSFUL!</h1>
+				<p><em>Thanks for your money... sucka!</em></p>
+				<div class="money-gif"></div>
+				<span class="form-close">CLOSE</span>
+			</span>
+			
 			<div class="cart-form" id="cart-form">
-				<form action="charge" method="POST" id="payment-form">
+				<form action="" method="POST" id="payment-form">
 					<span class="payment-errors"></span>
+
 
 					<div class="form-row">
 					  <label>
@@ -108,12 +116,6 @@
 					  </label>
 					</div>
 
-					<div class="form-row">
-						<label>
-							<span>TOTAL</span>
-							<input type="text" data-stripe="total" name="chargeTotal" id="form-total" disabled>
-						</label>
-					</div>
 					
 
 					<input type="submit" class="submit" value="Submit Payment">

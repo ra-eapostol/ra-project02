@@ -1,0 +1,26 @@
+.payment-errors {
+	display: none;
+	width: 100%;
+	border: 0.5px solid #ff9494;
+	border-radius: 5px;
+	color: red;
+}
+
+.payment-success {
+	display: none;
+	width: 100%;
+	border: 1px solid #4bb543;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	text-align: center;
+
+	.money-gif {
+		background-image: url('../assets/images/money.gif');
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		width: 200px;
+		height: 200px;
+	}
+}

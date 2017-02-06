@@ -15,6 +15,7 @@ export default class App {
 		this.catalogView = new CatalogView();
 		this.initBestBuyWebService();
 		this.stripe = new StripePayment();
+		this.stripe.stripeCreateToken(this);
 
 		// if (document.cookie != '') {
 		if (sessionStorage.getItem('cart') != undefined && sessionStorage.getItem('cart')) {

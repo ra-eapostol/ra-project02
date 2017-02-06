@@ -33,7 +33,7 @@ app.get('/paysuccess', function(req, res) {
 	// res.send('Payment successful!')
 });
 
-app.post('/charge', function(req,res) {
+app.post('/', function(req,res) {
 	let token = req.body.stripeToken;
 	console.log(token);
 	let chargeAmount = req.body.chargeAmount;
@@ -49,7 +49,7 @@ app.post('/charge', function(req,res) {
 	});
 	console.log(charge);
 	console.log("Your payment was successful");
-	res.redirect('/paysuccess');
+	// res.redirect('/');
 
 });
 
