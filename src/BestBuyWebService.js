@@ -10,17 +10,20 @@ export default class BestBuyWebService {
 
 
 	getData(theApp) {
-		if (localStorage.getItem('products') == null) {
+		// if (localStorage.getItem('products') == null) {
 			let serviceChannel = new XMLHttpRequest();
 			let url = this.url;
 		
 			serviceChannel.addEventListener('readystatechange', this.dataProcessor(theApp), false);
 			serviceChannel.open("GET", url, true);
 			serviceChannel.send();
-		} else {
-			this.products = JSON.parse(localStorage.getItem('products'));
-			theApp.products = this.products;
-		}
+		// } else {
+			// console.log('getting localStorage')
+			// console.log(JSON.parse(localStorage.getItem('products')).products);
+			// this.jsonData = JSON.parse(JSON.parse(localStorage.getItem('products')));
+			// console.log(this.jsonData.products);
+			// theApp.products = this.products;
+		// }
 	}
 
 	dataProcessor(theApp) {
@@ -37,6 +40,10 @@ export default class BestBuyWebService {
 			theApp.jsonData = e.target.responseText;
 			theApp.prepCart();
 			theApp.passProductData();
+			let d = new Date();
+			let timeSet = d.getTime();
+			// localStorage.setItem('products', JSON.stringify(theApp.jsonData));
+			localStorage.setItem('time', timeSet);
 		}
 
 	}

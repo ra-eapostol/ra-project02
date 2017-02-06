@@ -17,7 +17,7 @@ export default class App {
 		this.stripe = new StripePayment();
 		this.stripe.stripeCreateToken(this);
 
-		// if (document.cookie != '') {
+
 		if (sessionStorage.getItem('cart') != undefined && sessionStorage.getItem('cart')) {
 			console.log("found something");
 			this.ShoppingCart.cart = JSON.parse(sessionStorage.getItem('cart'));
@@ -38,9 +38,9 @@ export default class App {
 		let d = new Date();
 		let time = d.getTime();
 		let interval = 24*60*60*1000;
-		if ((time - localStorage.getItem('time')) >= interval){
-			localStorage.clear();
-		};
+		// if (localStorage.getItem('time') != undefined && (time - localStorage.getItem('time')) >= interval){
+		// 	localStorage.clear();
+		// };
 		this.bbws.getData(this);
 	}
 
