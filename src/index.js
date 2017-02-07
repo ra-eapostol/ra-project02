@@ -11,6 +11,17 @@ import App from './App';
 
 let app = new App();
 
+$('.main').on('mousewheel',function(e) {
+	if($('.overlay').is(':visible')) {
+		console.log('hi');
+		e.preventDefault();
+	}
+})
+// $('.main').on('scroll',function(e) {
+// 	if($('.overlay').is(':visible')) {
+// 		e.preventDefault();
+// 	}
+// })
 
 
 		

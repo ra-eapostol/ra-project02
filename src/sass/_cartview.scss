@@ -3,7 +3,9 @@
 	position: fixed;
 	margin: 200px 15% 0 15%;
 	z-index: 100;
+	height: 50vh;
 	min-height: 50vh;
+	// overflow-y: auto;
 
 	.cart-header, .cart-footer {
 		padding: 10px;
@@ -16,11 +18,12 @@
 
 	.cart-box {
 		overflow-y: auto;
+		padding: 20px 0;
 	}
 
 	.cart-form {
 		display: none;
-		overflow-y: auto;
+		overflow-y: scroll;
 	}
 
 	.cart-form-back-button{
@@ -28,7 +31,15 @@
 	}
 
 	.cart-footer {
-		padding: 20px 0;
+		padding: 5px 0 15px 0;
+
+		button {
+			padding-bottom: 20px;
+		}
+	}
+
+	.cart-row {
+		margin-bottom: 10px;
 	}
 }
 

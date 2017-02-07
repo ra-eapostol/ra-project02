@@ -921,20 +921,26 @@ ul, a, p {
   position: fixed;
   margin: 200px 15% 0 15%;
   z-index: 100;
+  height: 50vh;
   min-height: 50vh; }
   .cart-main .cart-header, .cart-main .cart-footer {
     padding: 10px; }
   .cart-main .temp {
     display: none; }
   .cart-main .cart-box {
-    overflow-y: auto; }
+    overflow-y: auto;
+    padding: 20px 0; }
   .cart-main .cart-form {
     display: none;
-    overflow-y: auto; }
+    overflow-y: scroll; }
   .cart-main .cart-form-back-button {
     display: none; }
   .cart-main .cart-footer {
-    padding: 20px 0; }
+    padding: 5px 0 15px 0; }
+    .cart-main .cart-footer button {
+      padding-bottom: 20px; }
+  .cart-main .cart-row {
+    margin-bottom: 10px; }
 
 /*****************************************************************/
 /*                         MOBILE STYLES                         */
@@ -1295,14 +1301,6 @@ input {
 input[type=submit] {
   border: 1px solid green;
   background-color: none; }
-
-.owl-carousel {
-  overflow-x: hidden;
-  overflow-y: hidden; }
-
-.owl-stage {
-  overflow-x: auto;
-  overflow-y: auto; }
 
 .success-div {
   width: 50%;
