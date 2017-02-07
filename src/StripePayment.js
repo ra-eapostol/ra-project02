@@ -45,8 +45,8 @@ export default class StripePayment {
 	  			exp_month: expMonth,
 	  			exp_year: expYear,
 	  			total: total
-	  		// }, thisStripePayment.stripeResponseHandler);
-	  		   }, thisStripePayment.dataProcessor(theApp));
+	  		}, thisStripePayment.stripeResponseHandler);
+	  		   // }, thisStripePayment.dataProcessor(this));
 	  		thisStripePayment.success();
 	  		$('.cart-main').addClass('border-green');
 	  		// $('.form-close').on('click', function() {
@@ -72,15 +72,15 @@ export default class StripePayment {
 	  
 	}
 
-	dataProcessor(theApp) {
-		let that = this;
-		let eventHandler = function(e) {
-			that.stripeResponseHandler(status, response, theApp);
-		};
-		return eventHandler;
-	}
+	// dataProcessor(handler) {
+	// 	let that = handler;
+	// 	let eventHandler = function(e) {
+	// 		that.stripeResponseHandler(status, response, that);
+	// 	};
+	// 	return eventHandler;
+	// }
 
-	stripeResponseHandler(status, response, theApp) {
+	stripeResponseHandler(status, response) {
 	  // Grab the form:
 	  var $form = $('#payment-form');
 	  console.log('handling...')
@@ -112,14 +112,14 @@ export default class StripePayment {
 	    // Submit the form:
 	    $('.form-close').on('click', function() {
 	  		// $('.form-close').on('click', function() {
-	  			theApp.ShoppingCart.clearCart();
+	  			// theApp.ShoppingCart.clearCart();
 	  			// $('.payment-success').hide();
 	  			// $('.cart-box').show();
 	  			// $('.cart-footer').show()
 	  		
 	  		sessionStorage.clear();	  
 	    	$form.get(0).submit();
-	    	sessionStorage.clear();
+
 	    });
 
 	  }
