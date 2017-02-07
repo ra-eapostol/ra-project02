@@ -17,14 +17,18 @@ export default class BestBuyWebService {
 			serviceChannel.addEventListener('readystatechange', this.dataProcessor(theApp), false);
 			serviceChannel.open("GET", url, true);
 			serviceChannel.send();
-		// } else {
-		// 	// console.log('getting localStorage')
+		 // } else {
+			// console.log('getting localStorage')
+			
+			// this.jsonData = JSON.parse(localStorage.getItem('bestBuyAPIData'));
+			// theApp.jsonData = JSON.parse(localStorage.getItem('bestBuyAPIData'));
+			// console.log(theApp.jsonData);
 		// 	console.log(JSON.parse(localStorage.getItem('bestBuyAPIData')).products);
 		// 	this.jsonData = JSON.parse(localStorage.getItem('bestBuyAPIData'));
 		// 	// console.log(this.jsonData.products);
 		// 	theApp.jsonData = this.jsonData;
 		// 	theApp.products = this.jsonData.products;
-		// }
+		 // }
 	}
 
 	dataProcessor(theApp) {
@@ -44,7 +48,8 @@ export default class BestBuyWebService {
 			let timeSet = d.getTime();	
 			localStorage.setItem('time', timeSet);
 
-			localStorage.setItem('bestBuyAPIData', theApp.jsonData);		
+			localStorage.setItem('bestBuyAPIData', theApp.jsonData);
+			console.log(localStorage);		
 			theApp.prepCart();
 			theApp.passProductData();
 
@@ -55,6 +60,12 @@ export default class BestBuyWebService {
 	}
 
 	getProducts() {
+		// if (localStorage.getItem('bestBuyAPIData') !== null) {
+		// 	let jsonData = JSON.parse(localStorage.getItem('bestBuyAPIData'));
+		// 	this.products = jsonData.products;
+		// 	return this.products
+		// }
+
 		if(this.jsonData != null) {
 			let jsonData = JSON.parse(this.jsonData);
 			// let d = new Date();

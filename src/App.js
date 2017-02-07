@@ -35,6 +35,7 @@ export default class App {
 
 
 
+
 		
 
 	}
@@ -44,9 +45,9 @@ export default class App {
 		let d = new Date();
 		let time = d.getTime();
 		let interval = 24*60*60*1000;
-		// if (localStorage.getItem('time') != undefined && (time - localStorage.getItem('time')) >= interval){
-		// 	localStorage.clear();
-		// };
+		if (localStorage.getItem('time') !== null && (time - localStorage.getItem('time')) >= interval){
+		 	localStorage.clear();
+		 };
 		this.bbws.getData(this);
 	}
 
@@ -63,6 +64,10 @@ export default class App {
 
 
 	prepCart() {
+		// if (localStorage.getItem('bestBuyAPIData') !== null) {
+		// 	this.products = this.bbws.getProducts();
+		// 	this.catalogView.addProductsToCarousel(this.products);
+		// }
 		if(this.jsonData != null || this.products != null) {
 
 			this.products = this.bbws.getProducts();
