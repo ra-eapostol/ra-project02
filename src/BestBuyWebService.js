@@ -1,8 +1,8 @@
 
 export default class BestBuyWebService {
 	constructor() {
-		// this.apiKey = "8ccddf4rtjz5k5btqam84qak";
-		this.apiKey = 'SXkiDh8lcFEAqyG6rDmJjlH4';
+		this.apiKey = "8ccddf4rtjz5k5btqam84qak";
+		// this.apiKey = 'SXkiDh8lcFEAqyG6rDmJjlH4';
 		this.url = `https://api.bestbuy.com/v1/products(categoryPath.id=abcat0501000)?apiKey=${this.apiKey}&format=json`;
 		this.jsonData = null;
 		this.products = null;
@@ -10,7 +10,7 @@ export default class BestBuyWebService {
 
 
 	getData(theApp) {
-		// if (localStorage.getItem('products') == null) {
+		// if (localStorage.getItem('bestBuyAPIData') === null) {
 			let serviceChannel = new XMLHttpRequest();
 			let url = this.url;
 		
@@ -18,11 +18,12 @@ export default class BestBuyWebService {
 			serviceChannel.open("GET", url, true);
 			serviceChannel.send();
 		// } else {
-			// console.log('getting localStorage')
-			// console.log(JSON.parse(localStorage.getItem('products')).products);
-			// this.jsonData = JSON.parse(JSON.parse(localStorage.getItem('products')));
-			// console.log(this.jsonData.products);
-			// theApp.products = this.products;
+		// 	// console.log('getting localStorage')
+		// 	console.log(JSON.parse(localStorage.getItem('bestBuyAPIData')).products);
+		// 	this.jsonData = JSON.parse(localStorage.getItem('bestBuyAPIData'));
+		// 	// console.log(this.jsonData.products);
+		// 	theApp.jsonData = this.jsonData;
+		// 	theApp.products = this.jsonData.products;
 		// }
 	}
 
@@ -38,12 +39,17 @@ export default class BestBuyWebService {
 		if (e.target.readyState == 4 && e.target.status == 200) {
 			this.jsonData = e.target.responseText;
 			theApp.jsonData = e.target.responseText;
+			console.log(typeof theApp.jsonData);
+			let d = new Date();
+			let timeSet = d.getTime();	
+			localStorage.setItem('time', timeSet);
+
+			localStorage.setItem('bestBuyAPIData', theApp.jsonData);		
 			theApp.prepCart();
 			theApp.passProductData();
-			let d = new Date();
-			let timeSet = d.getTime();
+
 			// localStorage.setItem('products', JSON.stringify(theApp.jsonData));
-			localStorage.setItem('time', timeSet);
+			
 		}
 
 	}

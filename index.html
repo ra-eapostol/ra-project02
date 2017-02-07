@@ -68,7 +68,7 @@
 				<div class="cart-row temp">
 					<div class="product-image width-20"></div>
 					<div class="product-name width-20"></div>
-					<div class="product-price width-20 flex-center-center"></div>
+					<div class="product-price width-20 justify-content-center"></div>
 					<div class="product-quantity width-20">
 						<input class="quantity-input" type="number" min="1">
 					</div>	
@@ -137,9 +137,9 @@
 				</form> -->
 			</div>
 			
-			<div class="cart-footer flex-row justify-content-space-between">
+			<div class="cart-footer flex-row justify-content-space-around width-100">
 				
-				<div class="cart-buttons flex-row justify-content-space-between">
+				<div class="cart-buttons flex-row justify-content-space-between width-50">
 					<button id="clearCartButton" class="clearCartButton">Clear Cart</button>
 					<button id="checkoutButton" class="checkoutButton">Checkout</button>
 				</div>
@@ -147,8 +147,10 @@
 				<div class="cart-form-back-button flex-center-center width-20">
 					<button class="formBackButton" id="formBackButton">Back</button>
 				</div>
-
-				<div class="total flex-row justify-content-flex-end" id="cart-total"></div>
+				<div class="flex-row">
+					<p>Total: $</p>
+					<div class="total flex-center-center" id="cart-total"></div>
+				</div>
 			</div>
 
 		</section>
@@ -187,8 +189,8 @@
 
 			<section id="banner" class="banner flex-center-center bg-cover-center width-100">
 				<div class="collection-info width-100 color-white flex-col flex-center-center">
-					<h4 class="width-100 text-center sans-serif text-shadow">WANT TO BUY</h4>
-					<h1 class="text-center text-shadow">COOL SHIT FROM BEST BUY?</h1>
+					<h4 class="width-100 text-center secondary text-shadow">WANT TO BUY</h4>
+					<h1 class="text-center text-shadow primary">COOL SHIT FROM BEST BUY?</h1>
 				</div>
 			</section>
 
@@ -197,8 +199,13 @@
 ############################################################ -->
 
 			<section id="about" class="about width-100 flex-col flex-center-center">
-				<h3 class="width-100 text-center section-title"><span class="italic">Hand-Crafted </span><span class="serif bold">Styles</span></h3>
-				<p class="xs-width-80 sm-width-90 text-center">Aloha Apparel Co. sells only the finest ready-to-travel clothing. Browse our current selection of products or sign-up for updates below.</p>
+				<h3 class="width-100 text-center section-title"><span class="primary italic">Hand Over</span><span class="primary bold"> your $$$</span></h3>
+				<p class="xs-width-80 sm-width-90 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</section>
 
 <!-- ############################################################ 
@@ -241,7 +248,7 @@
 			<section id="featured" class="featured flex-col flex-center-center width-100">
 				<h3 class="width-100 text-center section-title"><span class="italic">Most-Loved </span><span class="bold">Products</span></h3>
 
-				<div class="owl-carousel owl-theme width-100 slider">
+				<div class="owl-carousel owl-theme width-90 slider">
 					
 				</div>
 			</section>

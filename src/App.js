@@ -17,6 +17,8 @@ export default class App {
 		this.stripe = new StripePayment();
 		this.stripe.stripeCreateToken(this);
 
+		// non-existent localStorage returns null!
+
 
 		if (sessionStorage.getItem('cart') != undefined && sessionStorage.getItem('cart')) {
 			console.log("found something");
@@ -30,6 +32,10 @@ export default class App {
 		} else {
 			$('.cart-total').hide();
 		}
+
+
+
+		
 
 	}
 

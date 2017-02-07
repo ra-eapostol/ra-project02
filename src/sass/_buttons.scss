@@ -4,3 +4,24 @@ button {
 	outline: none;
 	border: 1px solid green;
 }
+
+.addToCartButton, .quickViewButton, .updateButton, .deleteButton,
+.clearCartButton, .checkoutButton, .formBackButton, .submit {
+	&:hover {
+		background-color: $green;
+		color: white;
+	}
+}
+
+.submit {
+	padding: 5px;
+	background-color: $white;
+	color: black;
+}
+
+.form-close {
+	cursor: pointer;
+	&:hover{
+		cursor: pointer;
+	}
+}

@@ -17,7 +17,8 @@ export default class ShoppingCart {
 		theApp.buildCartView();
 		let buttons = document.getElementsByTagName('button');
 
-		$('.addToCartButton').on('click', function(){
+		// $('.addToCartButton').on('click', function(){
+		$('body').on('click', '.addToCartButton', function(){
 			let sku = this.dataset.sku;
 			
 			let checkSku = function(product) {
@@ -69,8 +70,10 @@ export default class ShoppingCart {
 
         })
 
-		$('.quickViewButton').on('click', function() {
-			console.log('quickView clicked');
+
+
+	        $('body').on('click', '.quickViewButton', function(){
+	        	console.log('quickView clicked');
 			let sku = this.dataset.sku;
 			let checkSku = function(product) {
 				return product.sku == sku;
@@ -104,8 +107,8 @@ export default class ShoppingCart {
 			$('.overlay').fadeToggle();
 			$('.quickView').fadeToggle();
 
+	        })
 
-		});
 
 		$('.closeButton').on('click', function() {
 			$('.overlay').fadeToggle();

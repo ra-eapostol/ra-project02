@@ -9,6 +9,10 @@ export default class CatalogView {
                 loop: true,
                 center: true,
                 touchDrag: true,
+                number: 4,
+                freeDrage: true,
+                rewind: true,
+
                 // autoWidth: true,
                 // autoHeight: true,
                 // autoHeight: true,
@@ -24,7 +28,7 @@ export default class CatalogView {
                         items:2
                     },
                     1200:{
-                        items:4
+                        items:3
                     }
                 }
             });
@@ -37,11 +41,11 @@ export default class CatalogView {
         if (products === undefined || products == null) {
             return;
         }
+
         for(let product of products) {
             let newDiv = document.createElement("div");
-            newDiv.setAttribute("class", "product-wrapper");
-            newDiv.setAttribute("class", "owl-item");
-            newDiv.setAttribute("width", "100%");
+            newDiv.setAttribute("class", "product-wrapper owl-item");
+            // newDiv.setAttribute("class", "item");
             newDiv.setAttribute("style", "margin-top: 10px; padding: 10px; border: 1px solid rgba(0,0,0,0.1); border-radius: 10px;");
             newDiv.setAttribute("data-sku", product.sku);
             newDiv.setAttribute("data-sku", product.sku);
@@ -73,24 +77,28 @@ export default class CatalogView {
             prodPrice.appendChild(newPriceParaTextNode);
             prodPrice.setAttribute("data-sku", product.sku);
 
+            let buttonRow = document.createElement("div");
+            buttonRow.setAttribute("class", "flex justify-content-space-around width-100");
+            
             let addToCartBtn = document.createElement("button");
             let cartButtonTextNode = document.createTextNode("Add to cart");
             addToCartBtn.appendChild(cartButtonTextNode);
-            addToCartBtn.setAttribute("class", "addToCartButton");
+            addToCartBtn.setAttribute("class", "addToCartButton ");
             addToCartBtn.setAttribute("data-sku", product.sku);
 
             let quickViewBtn = document.createElement("button");
             let viewButtonTextNode = document.createTextNode("Quick View");
             quickViewBtn.appendChild(viewButtonTextNode);
-            quickViewBtn.setAttribute("class", "quickViewButton");
+            quickViewBtn.setAttribute("class", "quickViewButton ");
             quickViewBtn.setAttribute("data-sku", product.sku)
 
 
             newDiv.appendChild(prodImg);
             newDiv.appendChild(prodName);
             newDiv.appendChild(prodPrice);
-            newDiv.appendChild(addToCartBtn);
-            newDiv.appendChild(quickViewBtn);
+            buttonRow.appendChild(addToCartBtn);
+            buttonRow.appendChild(quickViewBtn);
+            newDiv.appendChild(buttonRow);
 
 
             this.carousel[0].appendChild(newDiv);    
@@ -101,11 +109,7 @@ export default class CatalogView {
 
 
 
+
     }
-
-
-
-
-
 
 }

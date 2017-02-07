@@ -78,62 +78,71 @@ export default class ShoppingCartView {
 		}
 		console.log(typeof $('.total').html());
 
+		
+	        $('.deleteButton').on('click', function() {
+	        	let rowID = this.dataset.sku;        
+	        	let row = this.parentNode.parentNode;
+	        	let cartBox = document.getElementById('cart-box');
+	        	$(this).parent().parent().fadeToggle( function() {cartBox.removeChild(row);});
+	        	   
+	        	
+	        	
+	        	delete cart[rowID];
+	        	console.log(cart);
+	        	theApp.ShoppingCart.updateTotal();
+	        	total = theApp.ShoppingCart.total;
 
-        $('.deleteButton').on('click', function() {
-        	let rowID = this.dataset.sku;        
-        	let row = this.parentNode.parentNode;
-        	let cartBox = document.getElementById('cart-box');
-        	$(this).parent().parent().fadeToggle( function() {cartBox.removeChild(row);});
-        	   
-        	
-        	
-        	delete cart[rowID];
-        	console.log(cart);
-        	theApp.ShoppingCart.updateTotal();
-        	total = theApp.ShoppingCart.total;
+	        	$('.total').html(total);
+	        	if(total == 0) {
+	        		$('.overlay').fadeToggle();
+	        		$('.cart-main').fadeToggle();
+	        	}
+	        	// document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
+	        	sessionStorage.setItem('cart', JSON.stringify(theApp.ShoppingCart.cart));
+	        	
+	        	$(this).parent().parent().fadeToggle();
 
-        	$('.total').html(total);
-        	if(total == 0) {
-        		$('.overlay').fadeToggle();
-        		$('.cart-main').fadeToggle();
-        	}
-        	document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
-        	
-        	
-        	$(this).parent().parent().fadeToggle();
+	        })
 
-        })
+	        $('.updateButton').on('click', function() {
 
-        $('.updateButton').on('click', function() {
+	        	let skuID = this.dataset.sku;        	
+	        	let input = document.getElementById(skuID);
+	        	let row = this.parentNode.parentNode;
+	        	console.log(input.value);
+	        	
+	        	if (input.value == 0) {
+	        		delete cart[skuID];
+	        		theApp.ShoppingCart.updateTotal();
+	        		cartBox.removeChild(row);
+	        	} else {
+	        		theApp.ShoppingCart.cart[skuID].quantity = input.value;
+	        		theApp.ShoppingCart.updateTotal();
+	        		total = theApp.ShoppingCart.total;
+	        		$('.total').html(total);
+	        	}
 
-        	let skuID = this.dataset.sku;        	
-        	let input = document.getElementById(skuID);
-        	let row = this.parentNode.parentNode;
-        	console.log(input.value);
-        	
-        	if (input.value == 0) {
-        		delete cart[skuID];
-        		theApp.ShoppingCart.updateTotal();
-        		cartBox.removeChild(row);
-        	} else {
-        		theApp.ShoppingCart.cart[skuID].quantity = input.value;
-        		theApp.ShoppingCart.updateTotal();
-        		total = theApp.ShoppingCart.total;
-        		$('.total').html(total);
-        	}
+	        	// document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
+	        	sessionStorage.setItem('cart', JSON.stringify(theApp.ShoppingCart.cart));
+	        	
+	        })
 
-        	// document.cookie = JSON.stringify(theApp.ShoppingCart.cart);
-        	sessionStorage.setItem('cart', JSON.stringify(theApp.ShoppingCart.cart));
-        	
-        })
+	        $('.overlay').on('click', function() {
+	        	if ($('.payment-success').is(':hidden')){
+	        		// $('.payment-success').hide();
+	        		$('.cart-main').hide();
+	        		$('.quickView').hide();
+	        		$('.overlay').hide();
+	        	} else {
+	        		('.overlay').show();
+	        	}
 
-        $('.overlay').on('click', function() {
-        	$('.payment-success').hide();
-        	$('.cart-main').hide();
-        	$('.quickView').hide();
-        	$('.overlay').hide();
+	        })
 
-        })
+
+
+
+    
 		
 		let updateCart = function(cart) {
 			let value = 0;

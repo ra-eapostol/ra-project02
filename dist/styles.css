@@ -313,7 +313,8 @@ table {
 
 html, body {
   max-width: 100%;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif; }
 
 body {
   max-width: 100%; }
@@ -745,20 +746,20 @@ ul, a, p {
 /***************/
 /* FONT STYLES */
 /***************/
-.serif {
-  font-family: 'Playfair Display', serif; }
+.primary {
+  font-family: "Roboto Mono", monospace; }
 
 .italic {
   font-size: 2.5em;
   font-style: italic; }
 
 .bold {
-  font-family: 'Playfair Display', serif;
+  font-family: "Roboto Mono", monospace;
   font-size: 2.5em;
   font-weight: 700; }
 
-.sans-serif {
-  font-family: 'Raleway', sans-serif;
+.secondary {
+  font-family: "Roboto", sans-serif;
   font-size: 1.0em;
   font-weight: 300; }
 
@@ -854,6 +855,9 @@ ul, a, p {
   z-index: 90;
   display: none; }
 
+.quickView > * {
+  padding: 10px; }
+
 /*****************************************************************/
 /*                         MOBILE STYLES                         */
 /*****************************************************************/
@@ -917,7 +921,7 @@ ul, a, p {
   position: fixed;
   margin: 200px 15% 0 15%;
   z-index: 100;
-  height: 50vh; }
+  min-height: 50vh; }
   .cart-main .cart-header, .cart-main .cart-footer {
     padding: 10px; }
   .cart-main .temp {
@@ -1174,7 +1178,10 @@ ul, a, p {
   background: -moz-linear-gradient(#006e00, darkgreen);
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(#006e00, darkgreen);
-  /* Standard syntax */ }
+  /* Standard syntax */
+  padding: 30px; }
+  .signup h3 {
+    margin-top: 15px; }
 
 .email-form {
   background-color: #fff;
@@ -1182,8 +1189,13 @@ ul, a, p {
   padding: 3px; }
 
 .submit-btn {
-  background-color: #ff0f0f;
-  color: #fff; }
+  border: 4px solid darkgreen;
+  background-color: #fff;
+  outline: none;
+  color: #373737; }
+  .submit-btn:hover {
+    background-color: darkgreen;
+    color: #fff; }
 
 /*****************************************************************/
 /*                         MOBILE STYLES                         */
@@ -1261,6 +1273,21 @@ button {
   outline: none;
   border: 1px solid green; }
 
+.addToCartButton:hover, .quickViewButton:hover, .updateButton:hover, .deleteButton:hover,
+.clearCartButton:hover, .checkoutButton:hover, .formBackButton:hover, .submit:hover {
+  background-color: darkgreen;
+  color: white; }
+
+.submit {
+  padding: 5px;
+  background-color: #fff;
+  color: black; }
+
+.form-close {
+  cursor: pointer; }
+  .form-close:hover {
+    cursor: pointer; }
+
 input {
   outline: none;
   border: none; }
@@ -1269,8 +1296,13 @@ input[type=submit] {
   border: 1px solid green;
   background-color: none; }
 
+.owl-carousel {
+  overflow-x: hidden;
+  overflow-y: hidden; }
+
 .owl-stage {
-  overflow-x: hidden; }
+  overflow-x: auto;
+  overflow-y: auto; }
 
 .success-div {
   width: 50%;
